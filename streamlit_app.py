@@ -27,31 +27,38 @@ def halaman_kalkulator():
     usia = st.number_input("Masukkan usia (tahun):", min_value=1, max_value=120, value=30)
     berat_badan = st.number_input("Masukkan berat badan (kg):", min_value=30, max_value=200, value=70)
     tinggi_badan = st.number_input("Masukkan tinggi badan (cm):", min_value=100, max_value=250, value=170)
+    jenis_kelamin = st.selectbox("Pilih jenis kelamin:", ["Pria", "Wanita"])
     tingkat_aktivitas = st.selectbox(
         "Tingkat aktivitas fisik:",
         ["Rendah (tidak aktif)", "Sedang (olahraga ringan)", "Tinggi (olahraga intensif)"]
     )
     
-    # Menghitung kebutuhan karbohidrat (menyesuaikan dengan faktor aktivitas)
-    if tingkat_aktivitas == "Rendah (tidak aktif)":
-        faktor_aktivitas = 30  # gram karbohidrat per kg berat badan
-    elif tingkat_aktivitas == "Sedang (olahraga ringan)":
-        faktor_aktivitas = 40
+    # Menghitung BMR (Basal Metabolic Rate)
+    if jenis_kelamin == "Pria":
+        bmr = 88.362 + (13.397 * berat_badan) + (4.799 * tinggi_badan) - (5.677 * usia)
     else:
-        faktor_aktivitas = 50
+        bmr = 447.593 + (9.247 * berat_badan) + (3.098 * tinggi_badan) - (4.330 * usia)
     
-    # Menghitung kebutuhan karbohidrat berdasarkan berat badan
-    kebutuhan_karbohidrat = berat_badan * faktor_aktivitas
+    # Menghitung TDEE (Total Daily Energy Expenditure)
+    if tingkat_aktivitas == "Rendah (tidak aktif)":
+        tdee = bmr * 1.2
+    elif tingkat_aktivitas == "Sedang (olahraga ringan)":
+        tdee = bmr * 1.55
+    else:
+        tdee = bmr * 1.9
+    
+    # Menghitung kebutuhan karbohidrat (sekitar 55% dari total kalori)
+    kebutuhan_karbohidrat_kalori = tdee * 0.55
+    kebutuhan_karbohidrat_gram = kebutuhan_karbohidrat_kalori / 4  # 1 gram karbohidrat = 4 kalori
     
     # Menampilkan hasil perhitungan
     st.subheader(f"Kebutuhan Karbohidrat Harian Anda:")
-    st.write(f"Berdasarkan berat badan Anda yang {berat_badan} kg, tinggi badan {tinggi_badan} cm, "
-             f"usia {usia} tahun, dan tingkat aktivitas {tingkat_aktivitas}, "
-             f"Anda membutuhkan sekitar **{kebutuhan_karbohidrat} gram karbohidrat per hari**.")
+    st.write(f"Berdasarkan informasi yang Anda berikan, kebutuhan kalori harian Anda sekitar **{tdee:.2f} kalori**.")
+    st.write(f"Dengan asumsi karbohidrat menyumbang 55% dari total kalori, kebutuhan karbohidrat Anda adalah sekitar **{kebutuhan_karbohidrat_gram:.2f} gram per hari**.")
     
     # Saran Makanan untuk Memenuhi Kebutuhan Karbohidrat
     st.subheader("Saran Makanan untuk Memenuhi Kebutuhan Karbohidrat Harian")
-    st.write(f"Untuk memenuhi kebutuhan karbohidrat harian sebesar {kebutuhan_karbohidrat} gram, Anda dapat mengonsumsi beberapa makanan berikut:")
+    st.write(f"Untuk memenuhi kebutuhan karbohidrat harian sebesar {kebutuhan_karbohidrat_gram:.2f} gram, Anda dapat mengonsumsi beberapa makanan berikut:")
     st.write("""
     1. **Nasi putih (1 porsi, 100 gram)**: 28 gram karbohidrat
     2. **Roti gandum (1 potong, 30 gram)**: 15 gram karbohidrat
@@ -75,4 +82,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
