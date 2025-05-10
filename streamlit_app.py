@@ -12,7 +12,6 @@ def set_background():
             background-repeat: no-repeat;
         }}
         </style>
-        """,
         unsafe_allow_html=True
     )
 
