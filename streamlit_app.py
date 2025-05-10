@@ -1,35 +1,37 @@
 import streamlit as st
+import base64
 
-# Tambahkan CSS untuk background
-def set_background():
-    st.markdown(
-        f"""
+# Fungsi untuk menambahkan background image dari file lokal
+def set_background(image_file):
+    with open(image_file, "rb") as image:
+        encoded = base64.b64encode(image.read()).decode()
+        css = f"""
         <style>
         .stApp {{
-            background-image: url("C:\Users\User\Downloads\karbohidrat-doktersehat.jpg");
+            background-image: url("data:image/jpg;base64,{encoded}");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }}
         </style>
-        unsafe_allow_html=True
-    )
+        """
+        st.markdown(css, unsafe_allow_html=True)
 
 # Halaman 1: Pengertian Karbohidrat
 def halaman_pengertian():
     st.title("Pengertian Karbohidrat 🍚")
     st.markdown("""
     **Karbohidrat** adalah salah satu jenis zat gizi yang berfungsi sebagai sumber energi utama bagi tubuh. Karbohidrat dapat ditemukan dalam berbagai jenis makanan, terutama yang berasal dari tanaman, seperti beras 🍚, gandum 🌾, kentang 🥔, jagung 🌽, dan buah-buahan 🍎.
-    
+
     Karbohidrat dibagi menjadi dua jenis utama, yaitu:
     1. **Karbohidrat sederhana**: Ini adalah karbohidrat yang cepat dicerna tubuh dan dapat meningkatkan kadar gula darah dengan cepat. Contohnya adalah gula 🍬, madu 🍯, dan sirup.
     2. **Karbohidrat kompleks**: Ini adalah karbohidrat yang lebih lambat dicerna tubuh dan memberikan energi yang bertahan lebih lama. Contohnya adalah nasi 🍚, roti gandum 🍞, kentang 🥔, dan pasta 🍝.
-    
+
     **Fungsi Karbohidrat**:
     - Sebagai sumber utama energi ⚡ untuk tubuh.
     - Membantu fungsi otak 🧠 dan sistem saraf.
     - Menyediakan serat 🌾 yang mendukung pencernaan.
-    
+
     **Kebutuhan Karbohidrat Harian**:
     Kebutuhan karbohidrat setiap orang berbeda, tergantung pada faktor seperti usia, jenis kelamin, berat badan, tinggi badan, dan tingkat aktivitas fisik. Oleh karena itu, sangat penting untuk menghitung kebutuhan karbohidrat secara tepat.
     """)
@@ -79,7 +81,7 @@ def halaman_kalkulator():
 
 # Main Program
 def main():
-    set_background()
+    set_background("karbohidrat-doktersehat.jpg")
     st.sidebar.title("Menu")
     pilihan = st.sidebar.radio("Pilih Halaman", ["Pengertian Karbohidrat", "Kalkulator Karbohidrat"])
     
