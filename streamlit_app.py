@@ -1,15 +1,12 @@
 import streamlit as st
-import base64
 
-# Fungsi untuk menambahkan background dari file lokal
-def set_background(image_file):
-    with open(image_file, "rb") as image:
-        encoded = base64.b64encode(image.read()).decode()
+# Tambahkan CSS untuk background
+def set_background():
     st.markdown(
         f"""
         <style>
         .stApp {{
-            background-image: url("data:image/jpg;base64,{encoded}");
+            background-image: url("https://cdn.doktersehat.com/wp-content/uploads/2020/06/Karbohidrat-Adalah-shutterstock_1025621526.jpg");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -24,18 +21,18 @@ def halaman_pengertian():
     st.title("Pengertian Karbohidrat 🍚")
     st.markdown("""
     **Karbohidrat** adalah salah satu jenis zat gizi yang berfungsi sebagai sumber energi utama bagi tubuh. Karbohidrat dapat ditemukan dalam berbagai jenis makanan, terutama yang berasal dari tanaman, seperti beras 🍚, gandum 🌾, kentang 🥔, jagung 🌽, dan buah-buahan 🍎.
-
+    
     Karbohidrat dibagi menjadi dua jenis utama, yaitu:
-    1. **Karbohidrat sederhana**: cepat dicerna dan meningkatkan kadar gula darah dengan cepat. Contoh: gula 🍬, madu 🍯, dan sirup.
-    2. **Karbohidrat kompleks**: dicerna lebih lambat dan memberikan energi lebih tahan lama. Contoh: nasi 🍚, roti gandum 🍞, kentang 🥔, pasta 🍝.
-
+    1. **Karbohidrat sederhana**: Ini adalah karbohidrat yang cepat dicerna tubuh dan dapat meningkatkan kadar gula darah dengan cepat. Contohnya adalah gula 🍬, madu 🍯, dan sirup.
+    2. **Karbohidrat kompleks**: Ini adalah karbohidrat yang lebih lambat dicerna tubuh dan memberikan energi yang bertahan lebih lama. Contohnya adalah nasi 🍚, roti gandum 🍞, kentang 🥔, dan pasta 🍝.
+    
     **Fungsi Karbohidrat**:
-    - Sumber utama energi ⚡
-    - Mendukung fungsi otak 🧠 dan sistem saraf
-    - Menyediakan serat 🌾 untuk pencernaan
-
-    **Kebutuhan Harian**:
-    Tergantung usia, jenis kelamin, berat, tinggi, dan aktivitas. Penting untuk menghitungnya secara akurat.
+    - Sebagai sumber utama energi ⚡ untuk tubuh.
+    - Membantu fungsi otak 🧠 dan sistem saraf.
+    - Menyediakan serat 🌾 yang mendukung pencernaan.
+    
+    **Kebutuhan Karbohidrat Harian**:
+    Kebutuhan karbohidrat setiap orang berbeda, tergantung pada faktor seperti usia, jenis kelamin, berat badan, tinggi badan, dan tingkat aktivitas fisik. Oleh karena itu, sangat penting untuk menghitung kebutuhan karbohidrat secara tepat.
     """)
 
 # Halaman 2: Kalkulator Kebutuhan Karbohidrat
@@ -66,23 +63,24 @@ def halaman_kalkulator():
     kebutuhan_karbohidrat_kalori = tdee * 0.55
     kebutuhan_karbohidrat_gram = kebutuhan_karbohidrat_kalori / 4
     
-    st.subheader("Kebutuhan Karbohidrat Harian Anda:")
-    st.write(f"Total kalori harian: **{tdee:.2f} kalori**")
-    st.write(f"Kebutuhan karbohidrat: **{kebutuhan_karbohidrat_gram:.2f} gram/hari**")
+    st.subheader(f"Kebutuhan Karbohidrat Harian Anda:")
+    st.write(f"Berdasarkan informasi yang Anda berikan, kebutuhan kalori harian Anda sekitar **{tdee:.2f} kalori**.")
+    st.write(f"Dengan asumsi karbohidrat menyumbang 55% dari total kalori, kebutuhan karbohidrat Anda adalah sekitar **{kebutuhan_karbohidrat_gram:.2f} gram per hari**.")
     
-    st.subheader("Saran Makanan 🍴")
-    st.write(f"""
-    1. Nasi putih (100g): 28g karbohidrat🍚  
-    2. Roti gandum (30g): 15g karbohidrat🍞  
-    3. Kentang rebus (100g): 17g karbohidrat🥔  
-    4. Pasta (100g): 25g karbohidrat🍝  
-    5. Oatmeal (240g): 27g karbohirat🥣  
-    6. Pisang (1 buah): 25g karbohidrat🍌  
+    st.subheader("Saran Makanan untuk Memenuhi Kebutuhan Karbohidrat Harian 🍴")
+    st.write(f"Untuk memenuhi kebutuhan karbohidrat harian sebesar {kebutuhan_karbohidrat_gram:.2f} gram, Anda dapat mengonsumsi beberapa makanan berikut:")
+    st.write("""
+    1. **Nasi putih (1 porsi, 100 gram)** 🍚: 28 gram karbohidrat  
+    2. **Roti gandum (1 potong, 30 gram)** 🍞: 15 gram karbohidrat  
+    3. **Kentang rebus (100 gram)** 🥔: 17 gram karbohidrat  
+    4. **Pasta (100 gram)** 🍝: 25 gram karbohidrat  
+    5. **Oatmeal (1 cangkir, 240 gram)** 🥣: 27 gram karbohidrat  
+    6. **Buah-buahan (misalnya pisang, 1 buah ukuran sedang)** 🍌: 25 gram karbohidrat  
     """)
 
-# Main
+# Main Program
 def main():
-    set_background("/mnt/data/0454753b-d9a3-433d-9f79-71241f3741f6.jpg")
+    set_background()
     st.sidebar.title("Menu")
     pilihan = st.sidebar.radio("Pilih Halaman", ["Pengertian Karbohidrat", "Kalkulator Karbohidrat"])
     
