@@ -6,7 +6,7 @@ def set_background():
         f"""
         <style>
         .stApp {{
-            background-image: url(https://www.google.com/imgres?q=karbohidrat%20adalah&imgurl=https%3A%2F%2Fd1vbn70lmn1nqe.cloudfront.net%2Fprod%2Fwp-content%2Fuploads%2F2022%2F09%2F21055413%2FLebih-Bergizi-Ini-X-Manfaat-Karbohidrat-Kompleks-bagi-Tubuh-01.jpg&imgrefurl=https%3A%2F%2Fwww.halodoc.com%2Fartikel%2Flebih-bergizi-ini-9-manfaat-karbohidrat-kompleks-bagi-tubuh&docid=93UNZZ4xSg8vLM&tbnid=DMz83O3FYwd_0M&vet=12ahUKEwiY1rv45ZiNAxXIw6ACHb4nHp8QM3oFCIkBEAA..i&w=1920&h=1353&hcb=2&ved=2ahUKEwiY1rv45ZiNAxXIw6ACHb4nHp8QM3oFCIkBEAA);
+            background-image: url("C:\Users\User\Downloads\karbohidrat-doktersehat.jpg");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
