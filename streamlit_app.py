@@ -1,13 +1,14 @@
 import streamlit as st
+import plotly.graph_objects as go
 
-# Tambahkan background dan font
+# Fungsi untuk menambahkan font & background
 def add_background():
     st.markdown(
         """
         <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-        html, body, [class*="css"]  {
+        html, body, [class*="css"] {
             font-family: 'Poppins', sans-serif;
             background-image: url("https://doktersehat.com/wp-content/uploads/2019/10/karbohidrat-doktersehat.jpg");
             background-size: cover;
@@ -35,96 +36,132 @@ def add_background():
 def halaman_pengertian():
     add_background()
     st.title("Pengertian Karbohidrat 🍚")
-    
+
     st.markdown("""
-    **Karbohidrat** adalah salah satu jenis zat gizi makro yang berfungsi sebagai sumber energi utama bagi tubuh. Karbohidrat dapat ditemukan dalam berbagai jenis makanan, terutama yang berasal dari tanaman seperti beras 🍚, gandum 🌾, kentang 🥔, jagung 🌽, dan buah-buahan 🍎.
+    **Karbohidrat** adalah salah satu dari tiga makronutrien utama selain protein dan lemak yang sangat dibutuhkan tubuh. Karbohidrat berfungsi sebagai **sumber energi utama** karena mudah diubah menjadi glukosa (gula darah), yang digunakan oleh sel-sel tubuh untuk beraktivitas.
 
-    ### Jenis Karbohidrat:
-    1. **Karbohidrat sederhana**: Cepat dicerna dan meningkatkan kadar gula darah dengan cepat. Contoh: gula 🍬, madu 🍯, sirup.
-    2. **Karbohidrat kompleks**: Dicerna lebih lambat dan memberikan energi yang bertahan lebih lama. Contoh: nasi 🍚, roti gandum 🍞, kentang 🥔, pasta 🍝.
+    ### 🧬 Struktur Kimia
+    Karbohidrat terdiri dari karbon (C), hidrogen (H), dan oksigen (O) dengan rumus umum \( (CH_2O)_n \). Berdasarkan strukturnya, karbohidrat dibagi menjadi:
+    - **Monosakarida**: gula sederhana seperti glukosa, fruktosa
+    - **Disakarida**: dua molekul gula, misalnya sukrosa (gula pasir)
+    - **Polisakarida**: rantai panjang, seperti pati dan serat
 
-    ### Struktur Kimia Karbohidrat:
-    - **Monosakarida**: Glukosa, fruktosa, galaktosa.
-    - **Disakarida**: Sukrosa, laktosa, maltosa.
-    - **Polisakarida**: Pati, glikogen, selulosa.
+    ### 🍽️ Jenis-Jenis Karbohidrat
+    1. **Karbohidrat Sederhana**:
+       - Cepat dicerna & cepat meningkatkan gula darah
+       - Contoh: gula putih, kue manis, minuman bersoda
 
-    ### Fungsi Karbohidrat:
-    - Sumber utama energi ⚡
-    - Menjaga fungsi otak 🧠 dan sistem saraf
-    - Menyediakan serat 🌾 untuk kesehatan pencernaan
-    - Mengatur metabolisme protein dan lemak
+    2. **Karbohidrat Kompleks**:
+       - Dicerna perlahan, mengandung serat tinggi
+       - Contoh: nasi merah, roti gandum, ubi, kacang-kacangan
 
-    ### Proses Pencernaan:
-    Karbohidrat dicerna menjadi glukosa oleh enzim, diserap oleh usus halus, dan digunakan tubuh sebagai energi atau disimpan sebagai glikogen di hati dan otot.
+    ### 💡 Fungsi Karbohidrat
+    - Memberikan energi instan ⚡
+    - Membantu metabolisme lemak
+    - Membantu fungsi otak dan sistem saraf 🧠
+    - Mengandung serat untuk pencernaan 🌾
 
-    ### Contoh Makanan Sumber Karbohidrat:
-    - **Alami**: Beras, ubi, jagung, pisang, apel, oat
-    - **Olahan**: Roti, mi, pasta, sereal, biskuit
+    ### 🛑 Dampak Kekurangan Karbohidrat
+    - Tubuh menjadi lemas
+    - Penurunan konsentrasi
+    - Potensi gangguan pencernaan
 
-    ### Risiko Kekurangan & Kelebihan:
-    - Kekurangan: Lemas, penurunan fokus, ketosis
-    - Kelebihan: Obesitas, diabetes tipe 2, karies gigi
+    ### ⚠️ Dampak Kelebihan Karbohidrat
+    - Peningkatan berat badan
+    - Risiko diabetes tipe 2
+    - Kadar gula darah tidak stabil
 
-    > Kebutuhan karbohidrat ideal: sekitar **45–65% dari total kalori harian**
+    ### ✅ Tips Memilih Karbohidrat Sehat
+    - Pilih makanan tinggi serat
+    - Kurangi makanan olahan
+    - Perhatikan indeks glikemik
+    - Kombinasikan dengan protein & lemak sehat
+
+    > "Karbohidrat bukan musuh, tapi sahabat energi jika dikonsumsi dengan bijak."
+
+    ---    
     """)
+
+    st.subheader("📊 Perbandingan Karbohidrat Sederhana vs Kompleks")
+
+    fig = go.Figure(data=[
+        go.Bar(name='Karbohidrat Sederhana', x=['Cepat Dicerna', 'Gula Darah Naik Cepat', 'Serat Rendah'], y=[10, 9, 3], marker_color='crimson'),
+        go.Bar(name='Karbohidrat Kompleks', x=['Cepat Dicerna', 'Gula Darah Naik Cepat', 'Serat Rendah'], y=[4, 3, 10], marker_color='limegreen')
+    ])
+    fig.update_layout(barmode='group', title="Karakteristik Karbohidrat", xaxis_title="Fitur", yaxis_title="Skala (1–10)")
+    st.plotly_chart(fig)
 
 # Halaman 2: Kalkulator Karbohidrat
 def halaman_kalkulator():
     add_background()
     st.title("Kalkulator Kebutuhan Karbohidrat Harian 🍽️")
-    
-    usia = st.number_input("Masukkan usia (tahun):", min_value=1, max_value=120, value=30)
-    berat_badan = st.number_input("Masukkan berat badan (kg):", min_value=30, max_value=200, value=70)
-    tinggi_badan = st.number_input("Masukkan tinggi badan (cm):", min_value=100, max_value=250, value=170)
-    jenis_kelamin = st.selectbox("Pilih jenis kelamin:", ["Pria", "Wanita"])
-    tingkat_aktivitas = st.selectbox(
-        "Tingkat aktivitas fisik:",
-        ["Rendah (tidak aktif)", "Sedang (olahraga ringan)", "Tinggi (olahraga intensif)"]
-    )
-    
-    # Hitung BMR
-    if jenis_kelamin == "Pria":
-        bmr = 88.362 + (13.397 * berat_badan) + (4.799 * tinggi_badan) - (5.677 * usia)
-    else:
-        bmr = 447.593 + (9.247 * berat_badan) + (3.098 * tinggi_badan) - (4.330 * usia)
-    
-    # Hitung TDEE
-    if tingkat_aktivitas == "Rendah (tidak aktif)":
-        tdee = bmr * 1.2
-    elif tingkat_aktivitas == "Sedang (olahraga ringan)":
-        tdee = bmr * 1.55
-    else:
-        tdee = bmr * 1.9
-    
-    # Hitung kebutuhan karbohidrat
-    kebutuhan_karbohidrat_kalori = tdee * 0.55
-    kebutuhan_karbohidrat_gram = kebutuhan_karbohidrat_kalori / 4
-    
-    st.subheader("Kebutuhan Karbohidrat Harian Anda:")
-    st.write(f"Kebutuhan kalori harian: **{tdee:.2f} kalori**")
-    st.write(f"Kebutuhan karbohidrat: **{kebutuhan_karbohidrat_gram:.2f} gram per hari**")
-    
-    st.subheader("Saran Makanan Harian 🍴")
-    st.markdown(f"""
-    Untuk memenuhi sekitar **{kebutuhan_karbohidrat_gram:.2f} gram** karbohidrat, Anda bisa konsumsi:
 
-    1. **Nasi putih (100g)** 🍚: 28g  
-    2. **Roti gandum (30g)** 🍞: 15g  
-    3. **Kentang rebus (100g)** 🥔: 17g  
-    4. **Pasta (100g)** 🍝: 25g  
-    5. **Oatmeal (240g)** 🥣: 27g  
-    6. **Pisang sedang (1 buah)** 🍌: 25g  
+    usia = st.number_input("Usia (tahun):", 1, 120, 25)
+    berat = st.number_input("Berat badan (kg):", 30, 200, 60)
+    tinggi = st.number_input("Tinggi badan (cm):", 100, 250, 170)
+    kelamin = st.selectbox("Jenis Kelamin", ["Pria", "Wanita"])
+    aktivitas = st.selectbox("Tingkat Aktivitas", ["Rendah", "Sedang", "Tinggi"])
+
+    # Hitung BMR
+    if kelamin == "Pria":
+        bmr = 88.362 + (13.397 * berat) + (4.799 * tinggi) - (5.677 * usia)
+    else:
+        bmr = 447.593 + (9.247 * berat) + (3.098 * tinggi) - (4.330 * usia)
+
+    # Hitung TDEE
+    tdee = bmr * (1.2 if aktivitas == "Rendah" else 1.55 if aktivitas == "Sedang" else 1.9)
+    karbo_kalori = tdee * 0.55
+    karbo_gram = karbo_kalori / 4
+
+    st.subheader("Hasil Perhitungan")
+    st.write(f"Total kebutuhan kalori: **{tdee:.2f} kalori**")
+    st.write(f"Kebutuhan karbohidrat: **{karbo_gram:.2f} gram/hari**")
+
+# Halaman 3: Kelompok & Dokumentasi
+def halaman_kelompok_dokumentasi():
+    add_background()
+    st.title("👥 Kelompok & 📸 Dokumentasi")
+
+    st.subheader("Judul Proyek")
+    st.write("*Aplikasi Edukasi dan Kalkulasi Kebutuhan Karbohidrat*")
+
+    st.subheader("Anggota Kelompok:")
+    st.markdown("""
+    1. Aulia Rahmawati  
+    2. Budi Santoso  
+    3. Citra Lestari  
+    4. Dimas Pratama  
+    5. Eka Nurhaliza  
     """)
 
-# Menu Utama
+    st.subheader("📸 Dokumentasi Proyek")
+    st.markdown("""
+    Proses pembuatan aplikasi ini dilakukan melalui:
+    - Pengumpulan informasi tentang karbohidrat
+    - Desain UI/UX
+    - Pengembangan kalkulator interaktif
+    - Review dan evaluasi hasil
+    """)
+
+    uploaded_file = st.file_uploader("Unggah Gambar Dokumentasi", type=["png", "jpg", "jpeg"])
+    if uploaded_file:
+        st.image(uploaded_file, caption="Dokumentasi Proyek", use_column_width=True)
+
+# Navigasi
 def main():
-    st.sidebar.title("Menu")
-    pilihan = st.sidebar.radio("Pilih Halaman", ["Pengertian Karbohidrat", "Kalkulator Karbohidrat"])
-    
+    st.sidebar.title("🍽️ Edukasi Karbohidrat")
+    pilihan = st.sidebar.radio("Pilih Halaman:", [
+        "Pengertian Karbohidrat", 
+        "Kalkulator Karbohidrat", 
+        "Kelompok & Dokumentasi"
+    ])
+
     if pilihan == "Pengertian Karbohidrat":
         halaman_pengertian()
     elif pilihan == "Kalkulator Karbohidrat":
         halaman_kalkulator()
+    elif pilihan == "Kelompok & Dokumentasi":
+        halaman_kelompok_dokumentasi()
 
 if __name__ == "__main__":
     main()
