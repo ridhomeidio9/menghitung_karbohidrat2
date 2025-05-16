@@ -132,11 +132,11 @@ def halaman_kelompok_dokumentasi():
 
     st.subheader("Anggota Kelompok 10:")
     st.markdown("""
-    1Afiqah Siva Chandra
-2.Erina Astriningtyas
-3.Muhammad Ridho Meidioputra 
-4.Putri Paramita                               
-5.Zahra Aliya Chairunnisa    
+    1.Afiqah Siva Chandra-2420564
+    2.Erina Astriningtyas-2420594
+    3.Muhammad Ridho Meidioputra-2420625
+    4.Putri Paramita-2420641
+    5.Zahra Aliya Chairunnisa-2420681
     """)
 
     st.subheader("📸 Dokumentasi Proyek")
