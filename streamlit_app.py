@@ -81,15 +81,6 @@ def halaman_pengertian():
     ---    
     """)
 
-    st.subheader("📊 Perbandingan Karbohidrat Sederhana vs Kompleks")
-
-    fig = go.Figure(data=[
-        go.Bar(name='Karbohidrat Sederhana', x=['Cepat Dicerna', 'Gula Darah Naik Cepat', 'Serat Rendah'], y=[10, 9, 3], marker_color='crimson'),
-        go.Bar(name='Karbohidrat Kompleks', x=['Cepat Dicerna', 'Gula Darah Naik Cepat', 'Serat Rendah'], y=[4, 3, 10], marker_color='limegreen')
-    ])
-    fig.update_layout(barmode='group', title="Karakteristik Karbohidrat", xaxis_title="Fitur", yaxis_title="Skala (1–10)")
-    st.plotly_chart(fig)
-
 # Halaman 2: Kalkulator Karbohidrat
 def halaman_kalkulator():
     add_background()
@@ -116,21 +107,41 @@ def halaman_kalkulator():
     st.write(f"Total kebutuhan kalori: **{tdee:.2f} kalori**")
     st.write(f"Kebutuhan karbohidrat: **{karbo_gram:.2f} gram/hari**")
 
+    st.subheader("🍴 Saran Makanan untuk Memenuhi Kebutuhan Karbohidrat")
+    st.markdown("""
+    Berikut ini adalah beberapa makanan sumber karbohidrat beserta kandungannya:
+
+    | Makanan                      | Karbohidrat (gram) per porsi |
+    |-----------------------------|------------------------------|
+    | Nasi putih (1 centong = 100g)   | 28g                         |
+    | Roti gandum utuh (1 lembar)     | 15g                         |
+    | Kentang rebus (100g)            | 17g                         |
+    | Pasta matang (100g)             | 25g                         |
+    | Oatmeal (1 mangkuk = 240g)      | 27g                         |
+    | Pisang sedang (1 buah)          | 25g                         |
+    | Jagung rebus (1 tongkol = 100g) | 19g                         |
+    | Ubi jalar rebus (100g)          | 20g                         |
+    | Apel sedang (1 buah)            | 20g                         |
+    | Kacang merah matang (100g)      | 21g                         |
+
+    💡 Tips: Gabungkan beberapa makanan di atas untuk memenuhi total kebutuhan harianmu secara seimbang dan variatif!
+    """)
+
 # Halaman 3: Kelompok & Dokumentasi
 def halaman_kelompok_dokumentasi():
     add_background()
     st.title("👥 Kelompok & 📸 Dokumentasi")
 
     st.subheader("Judul Proyek")
-    st.write("*Aplikasi Edukasi dan Kalkulasi Kebutuhan Karbohidrat*")
+    st.write("*Kalkulator Kebutuhan Karbohidrat harian*")
 
-    st.subheader("Anggota Kelompok:")
+    st.subheader("Anggota Kelompok 10:")
     st.markdown("""
-    1. Aulia Rahmawati  
-    2. Budi Santoso  
-    3. Citra Lestari  
-    4. Dimas Pratama  
-    5. Eka Nurhaliza  
+    1. afikah  
+    2. erina  
+    3. ridho
+    4. putri
+    5. zahra 
     """)
 
     st.subheader("📸 Dokumentasi Proyek")
