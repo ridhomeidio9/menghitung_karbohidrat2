@@ -1,26 +1,21 @@
 import streamlit as st
-
-# Fungsi untuk menambahkan background
 def add_background():
     st.markdown(
         """
         <style>
-        /* Background untuk seluruh halaman */
         .stApp {
-            background: linear-gradient(to right, #e0f7fa, #fff3e0);
+            background-image: url("https://doktersehat.com/wp-content/uploads/2019/10/karbohidrat-doktersehat.jpg");
+            background-attachment: fixed;
             background-size: cover;
-        }
-
-        /* Opsional: untuk membuat konten lebih transparan */
-        .css-18e3th9 {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 2rem;
-            border-radius: 10px;
+            background-repeat: no-repeat;
+            background-position: center;
         }
         </style>
         """,
         unsafe_allow_html=True
     )
+
+
 
 # Halaman 1: Pengertian Karbohidrat
 def halaman_pengertian():
