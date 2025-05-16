@@ -1,14 +1,34 @@
 import streamlit as st
 
-# Fungsi untuk menambahkan background
+# Fungsi untuk menambahkan background dan Google Font
 def add_background():
     st.markdown(
         """
         <style>
-        .stApp {
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        html, body, [class*="css"]  {
+            font-family: 'Poppins', sans-serif;
             background-image: url("https://doktersehat.com/wp-content/uploads/2019/10/karbohidrat-doktersehat.jpg");
             background-size: cover;
             background-attachment: fixed;
+            color: #ffffff;
+            font-size: 18px;
+        }
+
+        .stApp {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        h1, h2, h3, .stTitle {
+            color: #ffffff;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        .css-1d391kg, .css-ffhzg2 {
+            background-color: rgba(0, 0, 0, 0.6) !important;
         }
         </style>
         """,
