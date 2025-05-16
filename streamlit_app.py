@@ -1,4 +1,6 @@
 import streamlit as st
+
+# Fungsi untuk menambahkan background dan memperjelas teks
 def add_background():
     st.markdown(
         """
@@ -9,13 +11,18 @@ def add_background():
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
+            color: #111111;  /* warna teks utama agar terlihat jelas */
+        }
+
+        .block-container {
+            background-color: rgba(255, 255, 255, 0.85);  /* putih transparan */
+            padding: 2rem;
+            border-radius: 12px;
         }
         </style>
         """,
         unsafe_allow_html=True
     )
-
-
 
 # Halaman 1: Pengertian Karbohidrat
 def halaman_pengertian():
@@ -66,19 +73,19 @@ def halaman_kalkulator():
     kebutuhan_karbohidrat_kalori = tdee * 0.55
     kebutuhan_karbohidrat_gram = kebutuhan_karbohidrat_kalori / 4
     
-    st.subheader(f"Kebutuhan Karbohidrat Harian Anda:")
+    st.subheader("Kebutuhan Karbohidrat Harian Anda:")
     st.write(f"Berdasarkan informasi yang Anda berikan, kebutuhan kalori harian Anda sekitar **{tdee:.2f} kalori**.")
     st.write(f"Dengan asumsi karbohidrat menyumbang 55% dari total kalori, kebutuhan karbohidrat Anda adalah sekitar **{kebutuhan_karbohidrat_gram:.2f} gram per hari**.")
     
     st.subheader("Saran Makanan untuk Memenuhi Kebutuhan Karbohidrat Harian 🍴")
     st.write(f"Untuk memenuhi kebutuhan karbohidrat harian sebesar {kebutuhan_karbohidrat_gram:.2f} gram, Anda dapat mengonsumsi beberapa makanan berikut:")
-    st.write("""
-    1. **Nasi putih (1 porsi, 100 gram)** 🍚: 28 gram karbohidrat
-    2. **Roti gandum (1 potong, 30 gram)** 🍞: 15 gram karbohidrat
-    3. **Kentang rebus (100 gram)** 🥔: 17 gram karbohidrat
-    4. **Pasta (100 gram)** 🍝: 25 gram karbohidrat
-    5. **Oatmeal (1 cangkir, 240 gram)** 🥣: 27 gram karbohidrat
-    6. **Buah-buahan (misalnya pisang, 1 buah ukuran sedang)** 🍌: 25 gram karbohidrat
+    st.markdown("""
+    1. **Nasi putih (1 porsi, 100 gram)** 🍚: 28 gram karbohidrat  
+    2. **Roti gandum (1 potong, 30 gram)** 🍞: 15 gram karbohidrat  
+    3. **Kentang rebus (100 gram)** 🥔: 17 gram karbohidrat  
+    4. **Pasta (100 gram)** 🍝: 25 gram karbohidrat  
+    5. **Oatmeal (1 cangkir, 240 gram)** 🥣: 27 gram karbohidrat  
+    6. **Buah-buahan (misalnya pisang, 1 buah ukuran sedang)** 🍌: 25 gram karbohidrat  
     """)
 
 # Menu Navigasi
