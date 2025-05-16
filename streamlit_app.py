@@ -37,48 +37,38 @@ def halaman_pengertian():
     st.title("Pengertian Karbohidrat 🍚")
 
     st.markdown("""
-    **Karbohidrat** adalah salah satu jenis zat gizi yang berfungsi sebagai sumber energi utama bagi tubuh. Karbohidrat dapat ditemukan dalam berbagai jenis makanan, terutama yang berasal dari tanaman, seperti beras 🍚, gandum 🌾, kentang 🥔, jagung 🌽, dan buah-buahan 🍎
+    **Karbohidrat** adalah zat gizi makro yang berperan sebagai sumber energi utama bagi tubuh manusia. Hampir semua aktivitas tubuh, termasuk fungsi otak, otot, dan organ internal, membutuhkan karbohidrat dalam bentuk glukosa sebagai bahan bakar utama.
 
     ### 🧬 Struktur Kimia
-    Karbohidrat terdiri dari karbon (C), hidrogen (H), dan oksigen (O) dengan rumus umum \( (CH_2O)_n \). Berdasarkan strukturnya, karbohidrat dibagi menjadi:
-    - **Monosakarida**: gula sederhana seperti glukosa, fruktosa
-    - **Disakarida**: dua molekul gula, misalnya sukrosa (gula pasir)
-    - **Polisakarida**: rantai panjang, seperti pati dan serat
+    Karbohidrat tersusun dari atom karbon (C), hidrogen (H), dan oksigen (O). Tiga golongan utama:
+    - **Monosakarida**: Glukosa, fruktosa
+    - **Disakarida**: Sukrosa (gula meja), laktosa
+    - **Polisakarida**: Pati, selulosa
 
-    ### 🍽️ Jenis-Jenis Karbohidrat
-    1. **Karbohidrat Sederhana**:
-       - Cepat dicerna & cepat meningkatkan gula darah
-       - Contoh: gula putih, kue manis, minuman bersoda
-
-    2. **Karbohidrat Kompleks**:
-       - Dicerna perlahan, mengandung serat tinggi
-       - Contoh: nasi merah, roti gandum, ubi, kacang-kacangan
+    ### 🍽️ Jenis Karbohidrat
+    1. **Sederhana**: Cepat dicerna, meningkatkan gula darah dengan cepat
+       - Contoh: Gula, madu, permen
+    2. **Kompleks**: Mengandung serat, dicerna perlahan
+       - Contoh: Nasi merah, oat, jagung, ubi, roti gandum
 
     ### 💡 Fungsi Karbohidrat
-    - Memberikan energi instan ⚡
-    - Membantu metabolisme lemak
-    - Membantu fungsi otak dan sistem saraf 🧠
+    - Sumber energi cepat ⚡
+    - Menjaga keseimbangan metabolik
+    - Mendukung sistem saraf pusat
+    - Membantu fungsi otak 🧠
     - Mengandung serat untuk pencernaan 🌾
 
-    ### 🛑 Dampak Kekurangan Karbohidrat
-    - Tubuh menjadi lemas
-    - Penurunan konsentrasi
-    - Potensi gangguan pencernaan
+    ### 🛑 Kekurangan Karbohidrat
+    - Lemas, pusing
+    - Gangguan pencernaan
+    - Ketosis (jika ekstrem)
 
-    ### ⚠️ Dampak Kelebihan Karbohidrat
-    - Peningkatan berat badan
+    ### ⚠️ Kelebihan Karbohidrat
+    - Kenaikan berat badan
     - Risiko diabetes tipe 2
-    - Kadar gula darah tidak stabil
+    - Fluktuasi energi
 
-    ### ✅ Tips Memilih Karbohidrat Sehat
-    - Pilih makanan tinggi serat
-    - Kurangi makanan olahan
-    - Perhatikan indeks glikemik
-    - Kombinasikan dengan protein & lemak sehat
-
-    > "Karbohidrat bukan musuh, tapi sahabat energi jika dikonsumsi dengan bijak."
-
-    ---    
+    > Karbohidrat bukan musuh, tapi sahabat jika dikonsumsi dengan bijak.
     """)
 
 # Halaman 2: Kalkulator Karbohidrat
@@ -108,24 +98,29 @@ def halaman_kalkulator():
     st.write(f"Kebutuhan karbohidrat: **{karbo_gram:.2f} gram/hari**")
 
     st.subheader("🍴 Saran Makanan untuk Memenuhi Kebutuhan Karbohidrat")
+    
     st.markdown("""
+    <div style="background-color: white; color: black; padding: 15px; border-radius: 10px;">
     Berikut ini adalah beberapa makanan sumber karbohidrat beserta kandungannya:
 
-    | Makanan                      | Karbohidrat (gram) per porsi |
-    |-----------------------------|------------------------------|
-    | Nasi putih (1 centong = 100g)   | 28g                         |
-    | Roti gandum utuh (1 lembar)     | 15g                         |
-    | Kentang rebus (100g)            | 17g                         |
-    | Pasta matang (100g)             | 25g                         |
-    | Oatmeal (1 mangkuk = 240g)      | 27g                         |
-    | Pisang sedang (1 buah)          | 25g                         |
-    | Jagung rebus (1 tongkol = 100g) | 19g                         |
-    | Ubi jalar rebus (100g)          | 20g                         |
-    | Apel sedang (1 buah)            | 20g                         |
-    | Kacang merah matang (100g)      | 21g                         |
+    <table>
+    <tr><th>Makanan</th><th>Karbohidrat (gram) per porsi</th></tr>
+    <tr><td>Nasi putih (1 centong = 100g)</td><td>28g</td></tr>
+    <tr><td>Roti gandum utuh (1 lembar)</td><td>15g</td></tr>
+    <tr><td>Kentang rebus (100g)</td><td>17g</td></tr>
+    <tr><td>Pasta matang (100g)</td><td>25g</td></tr>
+    <tr><td>Oatmeal (1 mangkuk = 240g)</td><td>27g</td></tr>
+    <tr><td>Pisang sedang (1 buah)</td><td>25g</td></tr>
+    <tr><td>Jagung rebus (1 tongkol = 100g)</td><td>19g</td></tr>
+    <tr><td>Ubi jalar rebus (100g)</td><td>20g</td></tr>
+    <tr><td>Apel sedang (1 buah)</td><td>20g</td></tr>
+    <tr><td>Kacang merah matang (100g)</td><td>21g</td></tr>
+    </table>
 
-    💡 Tips: Gabungkan beberapa makanan di atas untuk memenuhi total kebutuhan harianmu secara seimbang dan variatif!
-    """)
+    <br>
+    💡 <strong>Tips:</strong> Gabungkan beberapa makanan di atas untuk memenuhi total kebutuhan harianmu secara seimbang dan variatif!
+    </div>
+    """, unsafe_allow_html=True)
 
 # Halaman 3: Kelompok & Dokumentasi
 def halaman_kelompok_dokumentasi():
@@ -133,31 +128,31 @@ def halaman_kelompok_dokumentasi():
     st.title("👥 Kelompok & 📸 Dokumentasi")
 
     st.subheader("KELOMPOK 10")
-    st.write("*Kalkulator Kebutuhan Karbohidrat harian*")
+    st.write("*Kalkulator Kebutuhan Karbohidrat Harian*")
 
     st.subheader("Anggota Kelompok 10:")
     st.markdown("""
-    1. afikah  
-    2. erina  
-    3. ridho
-    4. putri
-    5. zahra 
+    1Afiqah Siva Chandra
+2.Erina Astriningtyas
+3.Muhammad Ridho Meidioputra 
+4.Putri Paramita                               
+5.Zahra Aliya Chairunnisa    
     """)
 
     st.subheader("📸 Dokumentasi Proyek")
     st.markdown("""
     Proses pembuatan aplikasi ini dilakukan melalui:
-    - Pengumpulan informasi tentang karbohidrat
-    - Desain UI/UX
-    - Pengembangan kalkulator interaktif
-    - Review dan evaluasi hasil
+    - Pengumpulan informasi ilmiah tentang karbohidrat
+    - Perancangan tampilan antarmuka
+    - Pembuatan kalkulator interaktif menggunakan Streamlit
+    - Pengujian fungsionalitas dan tampilan
     """)
 
     uploaded_file = st.file_uploader("Unggah Gambar Dokumentasi", type=["png", "jpg", "jpeg"])
     if uploaded_file:
         st.image(uploaded_file, caption="Dokumentasi Proyek", use_column_width=True)
 
-# Navigasi
+# Menu Navigasi
 def main():
     st.sidebar.title("🍽️ Edukasi Karbohidrat")
     pilihan = st.sidebar.radio("Pilih Halaman:", [
