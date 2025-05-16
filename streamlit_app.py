@@ -1,6 +1,6 @@
 import streamlit as st
 
-# Fungsi untuk menambahkan background dan Google Font
+# Tambahkan background dan font
 def add_background():
     st.markdown(
         """
@@ -22,13 +22,9 @@ def add_background():
             border-radius: 10px;
         }
 
-        h1, h2, h3, .stTitle {
+        h1, h2, h3 {
             color: #ffffff;
-            text-shadow: 2px 2px 4px #000000;
-        }
-
-        .css-1d391kg, .css-ffhzg2 {
-            background-color: rgba(0, 0, 0, 0.6) !important;
+            text-shadow: 1px 1px 3px #000000;
         }
         </style>
         """,
@@ -39,23 +35,40 @@ def add_background():
 def halaman_pengertian():
     add_background()
     st.title("Pengertian Karbohidrat 🍚")
+    
     st.markdown("""
-    **Karbohidrat** adalah salah satu jenis zat gizi yang berfungsi sebagai sumber energi utama bagi tubuh. Karbohidrat dapat ditemukan dalam berbagai jenis makanan, terutama yang berasal dari tanaman, seperti beras 🍚, gandum 🌾, kentang 🥔, jagung 🌽, dan buah-buahan 🍎.
+    **Karbohidrat** adalah salah satu jenis zat gizi makro yang berfungsi sebagai sumber energi utama bagi tubuh. Karbohidrat dapat ditemukan dalam berbagai jenis makanan, terutama yang berasal dari tanaman seperti beras 🍚, gandum 🌾, kentang 🥔, jagung 🌽, dan buah-buahan 🍎.
 
-    Karbohidrat dibagi menjadi dua jenis utama, yaitu:
-    1. **Karbohidrat sederhana**: Cepat dicerna dan meningkatkan kadar gula darah dengan cepat. Contohnya adalah gula 🍬, madu 🍯, dan sirup.
-    2. **Karbohidrat kompleks**: Dicerna lebih lambat dan memberikan energi yang bertahan lebih lama. Contohnya nasi 🍚, roti gandum 🍞, kentang 🥔, dan pasta 🍝.
+    ### Jenis Karbohidrat:
+    1. **Karbohidrat sederhana**: Cepat dicerna dan meningkatkan kadar gula darah dengan cepat. Contoh: gula 🍬, madu 🍯, sirup.
+    2. **Karbohidrat kompleks**: Dicerna lebih lambat dan memberikan energi yang bertahan lebih lama. Contoh: nasi 🍚, roti gandum 🍞, kentang 🥔, pasta 🍝.
 
-    **Fungsi Karbohidrat**:
+    ### Struktur Kimia Karbohidrat:
+    - **Monosakarida**: Glukosa, fruktosa, galaktosa.
+    - **Disakarida**: Sukrosa, laktosa, maltosa.
+    - **Polisakarida**: Pati, glikogen, selulosa.
+
+    ### Fungsi Karbohidrat:
     - Sumber utama energi ⚡
-    - Membantu fungsi otak 🧠 dan saraf
-    - Menyediakan serat 🌾 untuk pencernaan
+    - Menjaga fungsi otak 🧠 dan sistem saraf
+    - Menyediakan serat 🌾 untuk kesehatan pencernaan
+    - Mengatur metabolisme protein dan lemak
 
-    **Kebutuhan Karbohidrat Harian**:
-    Tergantung usia, jenis kelamin, berat badan, tinggi badan, dan tingkat aktivitas.
+    ### Proses Pencernaan:
+    Karbohidrat dicerna menjadi glukosa oleh enzim, diserap oleh usus halus, dan digunakan tubuh sebagai energi atau disimpan sebagai glikogen di hati dan otot.
+
+    ### Contoh Makanan Sumber Karbohidrat:
+    - **Alami**: Beras, ubi, jagung, pisang, apel, oat
+    - **Olahan**: Roti, mi, pasta, sereal, biskuit
+
+    ### Risiko Kekurangan & Kelebihan:
+    - Kekurangan: Lemas, penurunan fokus, ketosis
+    - Kelebihan: Obesitas, diabetes tipe 2, karies gigi
+
+    > Kebutuhan karbohidrat ideal: sekitar **45–65% dari total kalori harian**
     """)
 
-# Halaman 2: Kalkulator Kebutuhan Karbohidrat
+# Halaman 2: Kalkulator Karbohidrat
 def halaman_kalkulator():
     add_background()
     st.title("Kalkulator Kebutuhan Karbohidrat Harian 🍽️")
@@ -69,11 +82,13 @@ def halaman_kalkulator():
         ["Rendah (tidak aktif)", "Sedang (olahraga ringan)", "Tinggi (olahraga intensif)"]
     )
     
+    # Hitung BMR
     if jenis_kelamin == "Pria":
         bmr = 88.362 + (13.397 * berat_badan) + (4.799 * tinggi_badan) - (5.677 * usia)
     else:
         bmr = 447.593 + (9.247 * berat_badan) + (3.098 * tinggi_badan) - (4.330 * usia)
     
+    # Hitung TDEE
     if tingkat_aktivitas == "Rendah (tidak aktif)":
         tdee = bmr * 1.2
     elif tingkat_aktivitas == "Sedang (olahraga ringan)":
@@ -81,6 +96,7 @@ def halaman_kalkulator():
     else:
         tdee = bmr * 1.9
     
+    # Hitung kebutuhan karbohidrat
     kebutuhan_karbohidrat_kalori = tdee * 0.55
     kebutuhan_karbohidrat_gram = kebutuhan_karbohidrat_kalori / 4
     
@@ -89,17 +105,18 @@ def halaman_kalkulator():
     st.write(f"Kebutuhan karbohidrat: **{kebutuhan_karbohidrat_gram:.2f} gram per hari**")
     
     st.subheader("Saran Makanan Harian 🍴")
-    st.write(f"Untuk memenuhi {kebutuhan_karbohidrat_gram:.2f} gram karbohidrat, Anda bisa mengonsumsi:")
-    st.markdown("""
-    1. **Nasi putih (100g)** 🍚: 28g karbohidrat  
-    2. **Roti gandum (30g)** 🍞: 15g karbohidrat  
-    3. **Kentang rebus (100g)** 🥔: 17g karbohidrat  
-    4. **Pasta (100g)** 🍝: 25g karbohidrat  
-    5. **Oatmeal (240g)** 🥣: 27g karbohidrat  
-    6. **Pisang (1 buah sedang)** 🍌: 25g karbohidrat  
+    st.markdown(f"""
+    Untuk memenuhi sekitar **{kebutuhan_karbohidrat_gram:.2f} gram** karbohidrat, Anda bisa konsumsi:
+
+    1. **Nasi putih (100g)** 🍚: 28g  
+    2. **Roti gandum (30g)** 🍞: 15g  
+    3. **Kentang rebus (100g)** 🥔: 17g  
+    4. **Pasta (100g)** 🍝: 25g  
+    5. **Oatmeal (240g)** 🥣: 27g  
+    6. **Pisang sedang (1 buah)** 🍌: 25g  
     """)
 
-# Menu Navigasi
+# Menu Utama
 def main():
     st.sidebar.title("Menu")
     pilihan = st.sidebar.radio("Pilih Halaman", ["Pengertian Karbohidrat", "Kalkulator Karbohidrat"])
