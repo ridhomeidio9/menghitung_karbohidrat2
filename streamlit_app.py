@@ -1,6 +1,6 @@
 import streamlit as st
 
-# Fungsi untuk menambahkan background dan memperjelas teks
+# Fungsi untuk menambahkan background dan memperjelas font
 def add_background():
     st.markdown(
         """
@@ -11,13 +11,19 @@ def add_background():
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            color: #111111;  /* warna teks utama agar terlihat jelas */
+            color: #000000; /* warna teks */
         }
 
-        .block-container {
-            background-color: rgba(255, 255, 255, 0.85);  /* putih transparan */
-            padding: 2rem;
-            border-radius: 12px;
+        /* Ubah warna dan ukuran font di seluruh halaman */
+        html, body, [class*="css"] {
+            color: #000000;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        /* Untuk komponen judul */
+        h1, h2, h3, h4 {
+            color: #000000;
         }
         </style>
         """,
@@ -32,16 +38,16 @@ def halaman_pengertian():
     **Karbohidrat** adalah salah satu jenis zat gizi yang berfungsi sebagai sumber energi utama bagi tubuh. Karbohidrat dapat ditemukan dalam berbagai jenis makanan, terutama yang berasal dari tanaman, seperti beras 🍚, gandum 🌾, kentang 🥔, jagung 🌽, dan buah-buahan 🍎.
 
     Karbohidrat dibagi menjadi dua jenis utama, yaitu:
-    1. **Karbohidrat sederhana**: Ini adalah karbohidrat yang cepat dicerna tubuh dan dapat meningkatkan kadar gula darah dengan cepat. Contohnya adalah gula 🍬, madu 🍯, dan sirup.
-    2. **Karbohidrat kompleks**: Ini adalah karbohidrat yang lebih lambat dicerna tubuh dan memberikan energi yang bertahan lebih lama. Contohnya adalah nasi 🍚, roti gandum 🍞, kentang 🥔, dan pasta 🍝.
+    1. **Karbohidrat sederhana**: Cepat dicerna dan meningkatkan kadar gula darah dengan cepat. Contohnya adalah gula 🍬, madu 🍯, dan sirup.
+    2. **Karbohidrat kompleks**: Dicerna lebih lambat dan memberikan energi yang bertahan lebih lama. Contohnya nasi 🍚, roti gandum 🍞, kentang 🥔, dan pasta 🍝.
 
     **Fungsi Karbohidrat**:
-    - Sebagai sumber utama energi ⚡ untuk tubuh.
-    - Membantu fungsi otak 🧠 dan sistem saraf.
-    - Menyediakan serat 🌾 yang mendukung pencernaan.
+    - Sumber utama energi ⚡
+    - Membantu fungsi otak 🧠 dan saraf
+    - Menyediakan serat 🌾 untuk pencernaan
 
     **Kebutuhan Karbohidrat Harian**:
-    Kebutuhan karbohidrat setiap orang berbeda, tergantung pada faktor seperti usia, jenis kelamin, berat badan, tinggi badan, dan tingkat aktivitas fisik. Oleh karena itu, sangat penting untuk menghitung kebutuhan karbohidrat secara tepat.
+    Tergantung usia, jenis kelamin, berat badan, tinggi badan, dan tingkat aktivitas.
     """)
 
 # Halaman 2: Kalkulator Kebutuhan Karbohidrat
@@ -74,29 +80,59 @@ def halaman_kalkulator():
     kebutuhan_karbohidrat_gram = kebutuhan_karbohidrat_kalori / 4
     
     st.subheader("Kebutuhan Karbohidrat Harian Anda:")
-    st.write(f"Berdasarkan informasi yang Anda berikan, kebutuhan kalori harian Anda sekitar **{tdee:.2f} kalori**.")
-    st.write(f"Dengan asumsi karbohidrat menyumbang 55% dari total kalori, kebutuhan karbohidrat Anda adalah sekitar **{kebutuhan_karbohidrat_gram:.2f} gram per hari**.")
+    st.write(f"Kebutuhan kalori harian: **{tdee:.2f} kalori**")
+    st.write(f"Kebutuhan karbohidrat: **{kebutuhan_karbohidrat_gram:.2f} gram per hari**")
     
-    st.subheader("Saran Makanan untuk Memenuhi Kebutuhan Karbohidrat Harian 🍴")
-    st.write(f"Untuk memenuhi kebutuhan karbohidrat harian sebesar {kebutuhan_karbohidrat_gram:.2f} gram, Anda dapat mengonsumsi beberapa makanan berikut:")
+    st.subheader("Saran Makanan Harian 🍴")
+    st.write(f"Untuk memenuhi {kebutuhan_karbohidrat_gram:.2f} gram karbohidrat, Anda bisa mengonsumsi:")
     st.markdown("""
-    1. **Nasi putih (1 porsi, 100 gram)** 🍚: 28 gram karbohidrat  
-    2. **Roti gandum (1 potong, 30 gram)** 🍞: 15 gram karbohidrat  
-    3. **Kentang rebus (100 gram)** 🥔: 17 gram karbohidrat  
-    4. **Pasta (100 gram)** 🍝: 25 gram karbohidrat  
-    5. **Oatmeal (1 cangkir, 240 gram)** 🥣: 27 gram karbohidrat  
-    6. **Buah-buahan (misalnya pisang, 1 buah ukuran sedang)** 🍌: 25 gram karbohidrat  
+    1. **Nasi putih (100g)** 🍚: 28g karbohidrat  
+    2. **Roti gandum (30g)** 🍞: 15g karbohidrat  
+    3. **Kentang rebus (100g)** 🥔: 17g karbohidrat  
+    4. **Pasta (100g)** 🍝: 25g karbohidrat  
+    5. **Oatmeal (240g)** 🥣: 27g karbohidrat  
+    6. **Pisang (1 buah sedang)** 🍌: 25g karbohidrat  
     """)
+
+# Halaman 3: Tentang Kelompok
+def halaman_tentang_kelompok():
+    add_background()
+    st.title("Tentang Kelompok 👥")
+    
+    st.subheader("👨‍👩‍👧‍👦 Nama Kelompok:")
+    st.write("Kelompok 3 - Gizi dan Nutrisi")
+
+    st.subheader("📋 Anggota Kelompok:")
+    st.markdown("""
+    1. **Afiqah Siva Chandra-2420564**  
+    2. **Erina Astriningtyas-2420594**  
+    3. **Muhammad Ridho Meidioputra-2420625**  
+    4. **Putri Paramita-2420641**  
+    5. **Zahra Aliya Chairunnisa-2420681**
+    """)
+
+    st.subheader("🖼️ Foto Kelompok:")
+    
+    # Upload gambar
+    uploaded_image = st.file_uploader("Unggah foto kelompok atau anggota:", type=["jpg", "jpeg", "png"])
+    if uploaded_image is not None:
+        st.image(uploaded_image, caption="Foto Kelompok", use_column_width=True)
+    
+    # Tampilkan gambar dari URL jika ingin
+    st.markdown("Atau gambar dari URL:")
+    st.image("blob:https://web.whatsapp.com/29c8e0d8-1a44-4830-9e63-de028de5c75a", caption="foto kelompok", use_column_width=True)
 
 # Menu Navigasi
 def main():
     st.sidebar.title("Menu")
-    pilihan = st.sidebar.radio("Pilih Halaman", ["Pengertian Karbohidrat", "Kalkulator Karbohidrat"])
+    pilihan = st.sidebar.radio("Pilih Halaman", ["Pengertian Karbohidrat", "Kalkulator Karbohidrat", "Tentang Kelompok"])
     
     if pilihan == "Pengertian Karbohidrat":
         halaman_pengertian()
     elif pilihan == "Kalkulator Karbohidrat":
         halaman_kalkulator()
+    elif pilihan == "Tentang Kelompok":
+        halaman_tentang_kelompok()
 
 if __name__ == "__main__":
     main()
