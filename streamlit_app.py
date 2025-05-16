@@ -132,7 +132,7 @@ def halaman_kelompok_dokumentasi():
     add_background()
     st.title("👥 Kelompok & 📸 Dokumentasi")
 
-    st.subheader("Judul Proyek")
+    st.subheader("KELOMPOK 10")
     st.write("*Kalkulator Kebutuhan Karbohidrat harian*")
 
     st.subheader("Anggota Kelompok 10:")
