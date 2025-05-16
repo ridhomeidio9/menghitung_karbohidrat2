@@ -143,11 +143,7 @@ def halaman_tentang_kelompok():
     
     st.subheader("👨‍👩‍👧‍👦 KELOMPOK 10:")
     st.write("Kelompok 10 - Kalkulator Kebutuhan Karbohidrat Harian")
-    st.subheader("🖼️ Foto Kelompok:")
-    uploaded_image = st.file_uploader("Unggah foto kelompok atau anggota:", type=["jpg", "jpeg", "png"])
-    if uploaded_image is not None:
-        st.image(uploaded_image, caption="Foto Kelompok", use_column_width=True)
-
+ 
     st.markdown("""
     1. **Afiqah Siva Chandra-2420564**  
     2. **Erina Astriningtyas-2420594**  
