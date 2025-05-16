@@ -11,19 +11,33 @@ def add_background():
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            color: #000000; /* warna teks */
         }
 
-        /* Ubah warna dan ukuran font di seluruh halaman */
+        /* Ubah warna dan ukuran font seluruh halaman */
         html, body, [class*="css"] {
-            color: #000000;
-            font-size: 18px;
-            font-weight: 500;
+            color: #111111; /* warna font lebih gelap */
+            font-size: 19px;
+            font-weight: 600;
         }
 
-        /* Untuk komponen judul */
+        /* Judul */
         h1, h2, h3, h4 {
-            color: #000000;
+            color: #111111;
+        }
+
+        /* Sidebar */
+        section[data-testid="stSidebar"] {
+            background-color: rgba(255, 255, 255, 0.8); /* semi-transparan putih */
+            color: #111111;
+        }
+
+        /* Input box dan komponen lainnya */
+        .stTextInput > div > input,
+        .stNumberInput input,
+        .stSelectbox div,
+        .stMarkdown p {
+            color: #111111 !important;
+            font-size: 18px !important;
         }
         </style>
         """,
@@ -120,7 +134,7 @@ def halaman_tentang_kelompok():
     
     # Tampilkan gambar dari URL jika ingin
     st.markdown("Atau gambar dari URL:")
-    st.image("blob:https://web.whatsapp.com/829beba0-a7cc-4d9a-a20a-71f20c6dddec,blob:https://web.whatsapp.com/c900d45e-f32b-422e-91ad-42a0d70ff9f7", caption="foto kelompok", use_column_width=True)
+    st.image("", caption="foto kelompok", use_column_width=True)
 
 # Menu Navigasi
 def main():
