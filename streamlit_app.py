@@ -136,33 +136,15 @@ def halaman_kalkulator():
     6. **Pisang (1 buah sedang)** 🍌: 25g karbohidrat  
     """)
 
-# Halaman 3: Tentang Kelompok
-def halaman_tentang_kelompok():
-    add_background()
-    st.title("Tentang Kelompok 👥")
-    
-    st.subheader("👨‍👩‍👧‍👦 KELOMPOK 10:")
-    st.write("Kelompok 10 - Kalkulator Kebutuhan Karbohidrat Harian")
- 
-    st.markdown("""
-    1. **Afiqah Siva Chandra-2420564**  
-    2. **Erina Astriningtyas-2420594**  
-    3. **Muhammad Ridho Meidioputra-2420625**  
-    4. **Putri Paramita-2420641**  
-    5. **Zahra Aliya Chairunnisa-2420681**
-    """)
-    
 # Menu Navigasi
 def main():
     st.sidebar.title("Menu")
-    pilihan = st.sidebar.radio("Pilih Halaman", ["Pengertian Karbohidrat", "Kalkulator Karbohidrat", "Tentang Kelompok"])
+    pilihan = st.sidebar.radio("Pilih Halaman", ["Pengertian Karbohidrat", "Kalkulator Karbohidrat"])
     
     if pilihan == "Pengertian Karbohidrat":
         halaman_pengertian()
     elif pilihan == "Kalkulator Karbohidrat":
         halaman_kalkulator()
-    elif pilihan == "Tentang Kelompok":
-        halaman_tentang_kelompok()
-
+    
 if __name__ == "__main__":
     main()
