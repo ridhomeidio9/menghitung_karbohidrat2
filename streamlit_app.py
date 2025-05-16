@@ -94,11 +94,14 @@ def halaman_kalkulator():
     karbo_gram = karbo_kalori / 4
 
     st.subheader("Hasil Perhitungan")
-    st.write(f"Total kebutuhan kalori: **{tdee:.2f} kalori**")
-    st.write(f"Kebutuhan karbohidrat: **{karbo_gram:.2f} gram/hari**")
+    st.markdown(f"""
+    <div style='color: #90EE90; font-size: 20px;'>
+        ✅ Total kebutuhan kalori: <strong>{tdee:.2f} kalori</strong><br>
+        ✅ Kebutuhan karbohidrat: <strong>{karbo_gram:.2f} gram/hari</strong>
+    </div>
+    """, unsafe_allow_html=True)
 
     st.subheader("🍴 Saran Makanan untuk Memenuhi Kebutuhan Karbohidrat")
-    
     st.markdown("""
     <div style="background-color: white; color: black; padding: 15px; border-radius: 10px;">
     Berikut ini adalah beberapa makanan sumber karbohidrat beserta kandungannya:
@@ -132,12 +135,14 @@ def halaman_kelompok_dokumentasi():
 
     st.subheader("Anggota Kelompok 10:")
     st.markdown("""
-    1.Afiqah Siva Chandra-2420564
-    2.Erina Astriningtyas-2420594
-    3.Muhammad Ridho Meidioputra-2420625
-    4.Putri Paramita-2420641
-    5.Zahra Aliya Chairunnisa-2420681
-    """)
+    <ul style="line-height: 1.8;">
+        <li><strong>Afiqah Siva Chandra</strong> - 2420564</li>
+        <li><strong>Erina Astriningtyas</strong> - 2420594</li>
+        <li><strong>Muhammad Ridho Meidioputra</strong> - 2420625</li>
+        <li><strong>Putri Paramita</strong> - 2420641</li>
+        <li><strong>Zahra Aliya Chairunnisa</strong> - 2420681</li>
+    </ul>
+    """, unsafe_allow_html=True)
 
     st.subheader("📸 Dokumentasi Proyek")
     st.markdown("""
