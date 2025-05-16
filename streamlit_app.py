@@ -10,7 +10,7 @@ background-image: url("import streamlit as st
 page_bg_img = """
 <style>
 body {
-background-image: url("https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0");
+background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fdoktersehat.com%2Fgaya-hidup%2Fgizi-dan-nutrisi%2Fkarbohidrat%2F&psig=AOvVaw28mSJZ48O7S989_f6e5ddx&ust=1747468453287000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCICMj77Bp40DFQAAAAAdAAAAABAE");
 background-size: cover;
 background-repeat: no-repeat;
 background-attachment: fixed;
