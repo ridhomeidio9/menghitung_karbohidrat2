@@ -1,5 +1,20 @@
 import streamlit as st
 
+# Fungsi untuk menambahkan background
+def add_background():
+    st.markdown(
+        """
+        <style>
+        .stApp {
+            background-image: url("https://doktersehat.com/wp-content/uploads/2019/10/karbohidrat-doktersehat.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
 # Halaman 1: Pengertian Karbohidrat
 def halaman_pengertian():
     add_background()
@@ -73,6 +88,6 @@ def main():
         halaman_pengertian()
     elif pilihan == "Kalkulator Karbohidrat":
         halaman_kalkulator()
-    
+
 if __name__ == "__main__":
     main()
