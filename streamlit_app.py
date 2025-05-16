@@ -5,39 +5,67 @@ def add_background():
     st.markdown(
         """
         <style>
+        /* Background Image + Overlay Transparan */
         .stApp {
             background-image: url("https://tribratanews.polri.go.id/web/image/blog.post/61345/image");
             background-attachment: fixed;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
+            position: relative;
         }
 
-        /* Ubah warna dan ukuran font seluruh halaman */
+        /* Overlay transparan untuk membuat teks lebih terbaca */
+        .stApp::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.75); /* Putih semi-transparan */
+            z-index: 0;
+        }
+
+        /* Pastikan semua konten tetap di atas lapisan transparan */
+        .block-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Font styling universal */
         html, body, [class*="css"] {
-            color: #111111; /* warna font lebih gelap */
-            font-size: 19px;
-            font-weight: 600;
+            color: #111111 !important;         /* Warna hitam gelap */
+            font-size: 18px !important;
+            font-weight: 600 !important;
         }
 
         /* Judul */
         h1, h2, h3, h4 {
-            color: #111111;
+            color: #111111 !important;
         }
 
-        /* Sidebar */
+        /* Sidebar styling */
         section[data-testid="stSidebar"] {
-            background-color: rgba(255, 255, 255, 0.8); /* semi-transparan putih */
+            background-color: rgba(255, 255, 255, 0.85);
             color: #111111;
         }
 
-        /* Input box dan komponen lainnya */
+        /* Input field styling */
         .stTextInput > div > input,
         .stNumberInput input,
         .stSelectbox div,
-        .stMarkdown p {
+        .stMarkdown p,
+        .stDataFrame {
             color: #111111 !important;
             font-size: 18px !important;
+        }
+
+        /* Link styling agar tetap terlihat di dark/light mode */
+        a {
+            color: #0a58ca !important;
+            text-decoration: none;
+            font-weight: bold;
         }
         </style>
         """,
@@ -124,18 +152,7 @@ def halaman_tentang_kelompok():
     4. **Putri Paramita-2420641**  
     5. **Zahra Aliya Chairunnisa-2420681**
     """)
-
-    st.subheader("🖼️ Foto Kelompok:")
     
-    # Upload gambar
-    uploaded_image = st.file_uploader("Unggah foto kelompok atau anggota:", type=["jpg", "jpeg", "png"])
-    if uploaded_image is not None:
-        st.image(uploaded_image, caption="Foto Kelompok", use_column_width=True)
-    
-    # Tampilkan gambar dari URL jika ingin
-    st.markdown("Atau gambar dari URL:")
-    st.image("", caption="foto kelompok", use_column_width=True)
-
 # Menu Navigasi
 def main():
     st.sidebar.title("Menu")
