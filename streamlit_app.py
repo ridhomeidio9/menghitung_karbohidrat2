@@ -1,5 +1,4 @@
 import streamlit as st
-import plotly.graph_objects as go
 
 # Fungsi untuk menambahkan font & background
 def add_background():
