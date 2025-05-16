@@ -99,8 +99,8 @@ def halaman_tentang_kelompok():
     add_background()
     st.title("Tentang Kelompok 👥")
     
-    st.subheader("👨‍👩‍👧‍👦 Nama Kelompok:")
-    st.write("Kelompok 3 - Gizi dan Nutrisi")
+    st.subheader("👨‍👩‍👧‍👦 KELOMPOK 10:")
+    st.write("Kelompok 10 - Kalkulator Kebutuhan Karbohidrat Harian")
 
     st.subheader("📋 Anggota Kelompok:")
     st.markdown("""
@@ -120,7 +120,7 @@ def halaman_tentang_kelompok():
     
     # Tampilkan gambar dari URL jika ingin
     st.markdown("Atau gambar dari URL:")
-    st.image("blob:https://web.whatsapp.com/29c8e0d8-1a44-4830-9e63-de028de5c75a", caption="foto kelompok", use_column_width=True)
+    st.image("blob:https://web.whatsapp.com/829beba0-a7cc-4d9a-a20a-71f20c6dddec,blob:https://web.whatsapp.com/c900d45e-f32b-422e-91ad-42a0d70ff9f7", caption="foto kelompok", use_column_width=True)
 
 # Menu Navigasi
 def main():
