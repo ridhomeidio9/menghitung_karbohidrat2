@@ -4,7 +4,7 @@ def add_background():
         """
         <style>
         .stApp {
-            background-image: url("https://doktersehat.com/wp-content/uploads/2019/10/karbohidrat-doktersehat.jpg");
+            background-image: url("https://tribratanews.polri.go.id/web/image/blog.post/61345/image");
             background-attachment: fixed;
             background-size: cover;
             background-repeat: no-repeat;
