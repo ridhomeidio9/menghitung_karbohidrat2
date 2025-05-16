@@ -37,7 +37,7 @@ def halaman_pengertian():
     st.title("Pengertian Karbohidrat 🍚")
 
     st.markdown("""
-    **Karbohidrat** adalah salah satu dari tiga makronutrien utama selain protein dan lemak yang sangat dibutuhkan tubuh. Karbohidrat berfungsi sebagai **sumber energi utama** karena mudah diubah menjadi glukosa (gula darah), yang digunakan oleh sel-sel tubuh untuk beraktivitas.
+    **Karbohidrat** adalah salah satu jenis zat gizi yang berfungsi sebagai sumber energi utama bagi tubuh. Karbohidrat dapat ditemukan dalam berbagai jenis makanan, terutama yang berasal dari tanaman, seperti beras 🍚, gandum 🌾, kentang 🥔, jagung 🌽, dan buah-buahan 🍎
 
     ### 🧬 Struktur Kimia
     Karbohidrat terdiri dari karbon (C), hidrogen (H), dan oksigen (O) dengan rumus umum \( (CH_2O)_n \). Berdasarkan strukturnya, karbohidrat dibagi menjadi:
