@@ -23,7 +23,7 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 def halaman_pengertian():
     st.title("Pengertian Karbohidrat 🍚")
     st.markdown("""
-    **Karbohidrat** adalah salah satu jenis zat gizi yang berfungsi sebagai sumber energi utama bagi tubuh. Karbohidrat dapat ditemukan dalam berbagai jenis makanan, terutama yang berasal dari tanaman, seperti beras, gandum 🌾, kentang 🥔, jagung 🌽, dan buah-buahan 🍎.
+    **Karbohidrat** adalah salah satu jenis zat gizi yang berfungsi sebagai sumber energi utama bagi tubuh. Karbohidrat dapat ditemukan dalam berbagai jenis makanan, terutama yang berasal dari tanaman, seperti beras, gandum, kentang, jagung, dan buah-buahan.
 
     Karbohidrat dibagi menjadi dua jenis utama, yaitu:
     1. **Karbohidrat sederhana**: Ini adalah karbohidrat yang cepat dicerna tubuh dan dapat meningkatkan kadar gula darah dengan cepat. Contohnya adalah gula 🍬, madu 🍯, dan sirup.
