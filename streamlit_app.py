@@ -153,12 +153,13 @@ def halaman_kelompok_dokumentasi():
     - Pengujian fungsionalitas dan tampilan
     """)
 
-    # Ganti unggah gambar dengan gambar statis dari folder lokal
-    st.image("images/3577af58-9b16-4777-837b-699371675b87.png", caption="Dokumentasi Proyek", use_column_width=True)
+    # Gambar dimuat dari URL agar tidak error saat deploy
+    st.image("https://i.ibb.co/wKs14zG/3577af58-9b16-4777-837b-699371675b87.png",
+             caption="Dokumentasi Proyek", use_column_width=True)
 
 # Menu Navigasi
 def main():
-    st.sidebar.title("🍽️ kebutuhan karbohidrat harian")
+    st.sidebar.title("🍽️ Kebutuhan Karbohidrat Harian")
     pilihan = st.sidebar.radio("Pilih Halaman:", [
         "Pengertian Karbohidrat", 
         "Kalkulator Karbohidrat", 
