@@ -153,11 +153,6 @@ def halaman_kelompok_dokumentasi():
     - Pengujian fungsionalitas dan tampilan
     """)
     
-    # Pakai gambar dari URL yang valid
-    uploaded_file = st.file_uploader("Upload gambar dokumentasi", type=["png","jpg","jpeg"])
-if uploaded_file is not None:
-    st.image(uploaded_file, caption="Dokumentasi Proyek", use_column_width=True
-
 # Menu Navigasi
 def main():
     st.sidebar.title("🍽️ Kebutuhan Karbohidrat Harian")
