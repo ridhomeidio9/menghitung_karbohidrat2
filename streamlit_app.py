@@ -153,9 +153,8 @@ def halaman_kelompok_dokumentasi():
     - Pengujian fungsionalitas dan tampilan
     """)
 
-    uploaded_file = st.file_uploader("Unggah Gambar Dokumentasi", type=["png", "jpg", "jpeg"])
-    if uploaded_file:
-        st.image(uploaded_file, caption="Dokumentasi Proyek", use_column_width=True)
+    # Ganti unggah gambar dengan gambar statis dari folder lokal
+    st.image("images/dokumentasi.jpg", caption="Dokumentasi Proyek", use_column_width=True)
 
 # Menu Navigasi
 def main():
