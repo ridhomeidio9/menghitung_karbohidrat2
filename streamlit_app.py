@@ -121,7 +121,7 @@ def halaman_kalkulator():
     </table>
 
     <br>
-    💡 <strong>Tips:</strong> Gabungkan beberapa makanan di atas untuk memenuhi total kebutuhan harianmu secara seimbang dan variatif!
+    💡 <strong>Tips:</strong> Gabungkan beberapa makanan di atas untuk memenuhi total kebutuhan harianmu!
     </div>
     """, unsafe_allow_html=True)
 
@@ -148,8 +148,8 @@ def halaman_kelompok_dokumentasi():
     st.markdown("""
     Proses pembuatan aplikasi ini dilakukan melalui:
     - Pengumpulan informasi ilmiah tentang karbohidrat
-    - Perancangan tampilan antarmuka
-    - Pembuatan kalkulator interaktif menggunakan Streamlit
+    - Perancangan tampilan
+    - Pembuatan kalkulator menggunakan Streamlit
     - Pengujian fungsionalitas dan tampilan
     """)
 
@@ -159,7 +159,7 @@ def halaman_kelompok_dokumentasi():
 
 # Menu Navigasi
 def main():
-    st.sidebar.title("🍽️ Edukasi Karbohidrat")
+    st.sidebar.title("🍽️ kebutuhan karbohidrat harian")
     pilihan = st.sidebar.radio("Pilih Halaman:", [
         "Pengertian Karbohidrat", 
         "Kalkulator Karbohidrat", 
