@@ -152,9 +152,9 @@ def halaman_kelompok_dokumentasi():
     - Pembuatan kalkulator menggunakan Streamlit
     - Pengujian fungsionalitas dan tampilan
     """)
-
-    # Gambar dimuat dari URL agar tidak error saat deploy
-  st.image("images/dokumen.png", caption="Dokumentasi Proyek", use_column_width=True)
+    
+    # Pakai gambar dari URL yang valid
+    st.image("https://i.imgur.com/Gs5zrfW.png", caption="Dokumentasi Proyek", use_column_width=True)
 
 # Menu Navigasi
 def main():
