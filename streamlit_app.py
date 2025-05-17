@@ -154,8 +154,7 @@ def halaman_kelompok_dokumentasi():
     """)
 
     # Gambar dimuat dari URL agar tidak error saat deploy
-    st.image("https://i.ibb.co/wKs14zG/3577af58-9b16-4777-837b-699371675b87.png",
-             caption="Dokumentasi Proyek", use_column_width=True)
+  st.image("images/dokumen.png", caption="Dokumentasi Proyek", use_column_width=True)
 
 # Menu Navigasi
 def main():
