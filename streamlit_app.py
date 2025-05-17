@@ -154,7 +154,7 @@ def halaman_kelompok_dokumentasi():
     """)
     
     # Pakai gambar dari URL yang valid
-    st.image("https://i.imgur.com/Gs5zrfW.png", caption="Dokumentasi Proyek", use_column_width=True)
+    st.image(""C:\Users\User\Downloads\WhatsApp Image 2025-05-09 at 16.25.36.jpeg"", caption="Dokumentasi Proyek", use_column_width=True)
 
 # Menu Navigasi
 def main():
