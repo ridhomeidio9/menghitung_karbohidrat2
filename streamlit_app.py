@@ -137,7 +137,7 @@ def halaman_kalkulator():
     </table>
 
     <br>
-    💡 <strong>Tips:</strong> Gabungkan beberapa makanan di atas untuk memenuhi total kebutuhan harianmu salam sehat dari kelompok 10!
+    💡 <strong>Tips:</strong> Gabungkan beberapa makanan di atas untuk memenuhi total kebutuhan harianmu,salam sehat dari kelompok 10!
     </div>
     """, unsafe_allow_html=True)
 
