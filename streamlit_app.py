@@ -1,6 +1,6 @@
 import streamlit as st
 
-# Fungsi untuk menambahkan font & background
+# Fungsi untuk menambahkan font & background dengan kontras untuk dark/light mode
 def add_background():
     st.markdown(
         """
@@ -12,19 +12,35 @@ def add_background():
             background-image: url("https://doktersehat.com/wp-content/uploads/2019/10/karbohidrat-doktersehat.jpg");
             background-size: cover;
             background-attachment: fixed;
-            color: #ffffff;
-            font-size: 18px;
+            margin: 0;
+            padding: 0;
+            color: #f0f0f0;
         }
 
         .stApp {
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 1rem;
-            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 2rem;
+            border-radius: 12px;
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4, h5, h6 {
             color: #ffffff;
-            text-shadow: 1px 1px 3px #000000;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+
+        table {
+            color: #000000 !important;
+            background-color: #ffffff !important;
+            border-radius: 8px;
+            padding: 5px;
+        }
+
+        th, td {
+            padding: 8px 12px;
+        }
+
+        ul, li {
+            color: #f0f0f0;
         }
         </style>
         """,
@@ -152,7 +168,7 @@ def halaman_kelompok_dokumentasi():
     - Pembuatan kalkulator menggunakan Streamlit
     - Pengujian fungsionalitas dan tampilan
     """)
-    
+
 # Menu Navigasi
 def main():
     st.sidebar.title("🍽️ Kebutuhan Karbohidrat Harian")
