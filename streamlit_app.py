@@ -137,14 +137,14 @@ def halaman_kalkulator():
     </table>
 
     <br>
-    💡 <strong>Tips:</strong> Gabungkan beberapa makanan di atas untuk memenuhi total kebutuhan harianmu!
+    💡 <strong>Tips:</strong> Gabungkan beberapa makanan di atas untuk memenuhi total kebutuhan harianmu salam sehat dari kelompok 10!
     </div>
     """, unsafe_allow_html=True)
 
 # Halaman 3: Kelompok & Dokumentasi
-def halaman_kelompok_dokumentasi():
+def halaman_kelompok():
     add_background()
-    st.title("👥 Kelompok & 📸 Dokumentasi")
+    st.title("👥 Kelompok")
 
     st.subheader("KELOMPOK 10")
     st.write("*Kalkulator Kebutuhan Karbohidrat Harian*")
@@ -160,7 +160,7 @@ def halaman_kelompok_dokumentasi():
     </ul>
     """, unsafe_allow_html=True)
 
-    st.subheader("📸 Dokumentasi Proyek")
+    st.subheader("📸Proyek")
     st.markdown("""
     Proses pembuatan aplikasi ini dilakukan melalui:
     - Pengumpulan informasi ilmiah tentang karbohidrat
@@ -175,15 +175,15 @@ def main():
     pilihan = st.sidebar.radio("Pilih Halaman:", [
         "Pengertian Karbohidrat", 
         "Kalkulator Karbohidrat", 
-        "Kelompok & Dokumentasi"
+        "Kelompok"
     ])
 
     if pilihan == "Pengertian Karbohidrat":
         halaman_pengertian()
     elif pilihan == "Kalkulator Karbohidrat":
         halaman_kalkulator()
-    elif pilihan == "Kelompok & Dokumentasi":
-        halaman_kelompok_dokumentasi()
+    elif pilihan == "Kelompok":
+        halaman_kelompok()
 
 if __name__ == "__main__":
     main()
